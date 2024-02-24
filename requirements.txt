@@ -1,2 +1,4 @@
-fastapi
-uvicorn[standard]
+Flask
+eth-account
+web3
+python-dotenv
