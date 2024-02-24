@@ -2,3 +2,4 @@ Flask
 eth-account
 web3
 python-dotenv
+Gunicorn
