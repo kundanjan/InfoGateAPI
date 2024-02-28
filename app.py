@@ -86,7 +86,8 @@ def add_monitor():
         suppliers_full_address = request_data.get('suppliers_full_address')
         date_of_receipt_of_computer = request_data.get('date_of_receipt_of_computer')
         cost_of_computer = request_data.get('cost_of_computer')
-        dsr_page_no_and_sr_no = request_data.get('dsr_page_no_and_sr_no')
+        dsr_page_no_and_sr_no = request_data.get('dsr_page_no')
+        sr_no = request_data.get('sr_no')
         name_of_department = request_data.get('name_of_department')
         name_of_laboratory = request_data.get('name_of_laboratory')
 
@@ -94,11 +95,12 @@ def add_monitor():
         tx_hash = monitor_contract.functions.addMonitor(
             name_of_brand,
             suppliers_full_address,
-            int(date_of_receipt_of_computer),
+            date_of_receipt_of_computer,
             int(cost_of_computer),
             dsr_page_no_and_sr_no,
             name_of_department,
-            name_of_laboratory
+            name_of_laboratory,
+            sr_no
         ).build_transaction({
             "from": details.account_address,
             'nonce': w3.eth.get_transaction_count(details.account_address),
