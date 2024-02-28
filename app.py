@@ -60,8 +60,8 @@ def get_monitor_info(monitor_id):
             "id": monitor_info[0],
             "name_of_brand": monitor_info[1],
             "suppliers_full_address": monitor_info[2],
-            "date_of_receipt_of_computer": int(monitor_info[3]),
-            "cost_of_computer": int(monitor_info[4]),
+            "date_of_receipt_of_computer": monitor_info[3],
+            "cost_of_computer": monitor_info[4],
             "dsr_page_no_and_sr_no": monitor_info[5],
             "name_of_department": monitor_info[6],
             "name_of_laboratory": monitor_info[7]
@@ -92,8 +92,8 @@ def add_monitor():
         tx_hash = monitor_contract.functions.addMonitor(
             name_of_brand,
             suppliers_full_address,
-            date_of_receipt_of_computer,
-            cost_of_computer,
+            int(date_of_receipt_of_computer),
+            int(cost_of_computer),
             dsr_page_no_and_sr_no,
             name_of_department,
             name_of_laboratory
