@@ -72,7 +72,7 @@ def get_monitor_info(monitor_id):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     
-@app.route('a', methods=['POST'])
+@app.route('/add_monitor', methods=['POST'])
 def add_monitor():
     # Account from which you want to send the transaction
     private_key = Account.from_mnemonic(details.phrase)._private_key.hex()
