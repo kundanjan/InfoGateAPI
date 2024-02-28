@@ -16,7 +16,7 @@ app = Flask(__name__)
 w3 = Web3(Web3.HTTPProvider(details.provider_url))
 
 # Set the address of the deployed contract
-monitor_contract_address = '0x388d8E278CB9f98ED0C61516D55AcAC1DF465789'
+monitor_contract_address = '0xc58CCf60529AD95c0fa4542A72cec3A1A614f144'
 cpu_contract_address='0x9AdD894a3F727660CAc12C1c807550958A3e29C4'
 mouse_contract_address ='0x678327150a7a3BA74bD0892e6E213544dAaFc119'
 keyboard_contract_address ='0x5c34b0015fBd7FFb95EcFa0F2923533Acd31986A'
