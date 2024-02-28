@@ -60,8 +60,8 @@ def get_monitor_info(monitor_id):
             "id": monitor_info[0],
             "name_of_brand": monitor_info[1],
             "suppliers_full_address": monitor_info[2],
-            "date_of_receipt_of_computer": monitor_info[3],
-            "cost_of_computer": monitor_info[4],
+            "date_of_receipt_of_computer": int(monitor_info[3]),
+            "cost_of_computer": int(monitor_info[4]),
             "dsr_page_no_and_sr_no": monitor_info[5],
             "name_of_department": monitor_info[6],
             "name_of_laboratory": monitor_info[7]
@@ -72,7 +72,7 @@ def get_monitor_info(monitor_id):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     
-@app.route('/add_monitor', methods=['POST'])
+@app.route('a', methods=['POST'])
 def add_monitor():
     # Account from which you want to send the transaction
     private_key = Account.from_mnemonic(details.phrase)._private_key.hex()
