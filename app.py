@@ -492,6 +492,23 @@ def add_scanner():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+    
+
+@app.route('/get_all_monitor_ids', methods=['GET'])
+def get_all_monitor_ids():
+    try:
+        # Call the getAllMonitorIds function
+        monitor_ids = monitor_contract.functions.getAllMonitorIds().call()
+
+        # Convert retrieved list to Python list
+        python_monitor_ids = list(monitor_ids)  # Convert from Solidity array to Python list
+
+        # Return the list of IDs in JSON format
+        return jsonify({"monitor_ids": python_monitor_ids}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 
 
 # Run the Flask application
