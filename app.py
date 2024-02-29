@@ -510,6 +510,87 @@ def get_all_monitor_ids():
         return jsonify({"error": str(e)}), 500
 
 
+@app.route('/get_all_cpu_ids', methods=['GET'])
+def get_all_cpu_ids():
+    try:
+        # Call the getAllMonitorIds function
+        cpu_ids = monitor_contract.functions.getAllMonitorIds().call()
+
+        # Convert retrieved list to Python list
+        python_cpu_ids = list(cpu_ids)  # Convert from Solidity array to Python list
+
+        # Return the list of IDs in JSON format
+        return jsonify({"cpu_ids": python_cpu_ids}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/get_all_printer_ids', methods=['GET'])
+def get_all_printer_ids():
+    try:
+        # Call the getAllPrinterIds function
+        printer_ids = monitor_contract.functions.getAllPrinterIds().call()
+
+        # Convert retrieved list to Python list
+        python_printer_ids = list(printer_ids)  # Convert from Solidity array to Python list
+
+        # Return the list of IDs in JSON format
+        return jsonify({"printer_ids": python_printer_ids}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route('/get_all_keyboard_ids', methods=['GET'])
+def get_all_keyboard_ids():
+    try:
+        # Call the getAllKeyboardIds function
+        keyboard_ids = monitor_contract.functions.getAllKeyboardIds().call()
+
+        # Convert retrieved list to Python list
+        python_keyboard_ids = list(keyboard_ids)  # Convert from Solidity array to Python list
+
+        # Return the list of IDs in JSON format
+        return jsonify({"keyboard_ids": python_keyboard_ids}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    
+
+
+@app.route('/get_all_mouse_ids', methods=['GET'])
+def get_all_mouse_ids():
+    try:
+        # Call the getAllMouseIds function
+        mouse_ids = monitor_contract.functions.getAllMouseIds().call()
+
+        # Convert retrieved list to Python list
+        python_mouse_ids = list(mouse_ids)  # Convert from Solidity array to Python list
+
+        # Return the list of IDs in JSON format
+        return jsonify({"mouse_ids": python_mouse_ids}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+
+
+@app.route('/get_all_scanner_ids', methods=['GET'])
+def get_all_scanner_ids():
+    try:
+        # Call the getAllScannerIds function
+        scanner_ids = monitor_contract.functions.getAllScannerIds().call()
+
+        # Convert retrieved list to Python list
+        python_scanner_ids = list(scanner_ids)  # Convert from Solidity array to Python list
+
+        # Return the list of IDs in JSON format
+        return jsonify({"scanner_ids": python_scanner_ids}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 
 # Run the Flask application
 # if __name__ == "__main__":
